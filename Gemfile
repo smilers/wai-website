@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem "wai-gems", :path => "_external/data/wai-gems"
 gem 'jekyll-feed'
-gem "nokogiri"
+gem "nokogiri", ">= 1.13.9"
 
 # Following are an optimisation to use C implementation
 #gem 'liquid', github: 'Shopify/liquid', branch: 'master'
