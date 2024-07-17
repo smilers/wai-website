@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem "wai-gems", :path => "_external/data/wai-gems"
-gem 'jekyll-feed'
+gem 'jekyll-feed', '>= 0.17.0'
 gem "nokogiri"
 
 # Following are an optimisation to use C implementation
