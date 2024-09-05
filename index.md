@@ -52,10 +52,13 @@ inline_css: |
             <span class="title">News</span>
           </h2>
         </header>
+	    <h3>Current Work</h3>
+	    <p><small>(updated monthly)</small></p>
+	    <p><strong>See <a href="{{ '/update/' | relative_url }}">What We're Working On &ndash; Accessibility Activities and Publications</a></strong></p>
         {%- for post in site.posts -%}
           <article class="news-teaser">
               <h3>{%comment%}<a href="{{ post.url | relative_url }}">{%endcomment%}{{post.title}}{%comment%}</a>{%endcomment%}</h3>
-              <p><small>({{post.date | date: "%Y-%m-%d"}})</small></p>
+              <p><small>({{post.date | date: "%Y-%b-%d"}})</small></p>
               {{ post.content | markdownify }}
           </article>
           {%- if forloop.index == 7 -%}
@@ -80,6 +83,7 @@ inline_css: |
           <li><a href="{{ role.url | relative_url }}">{% if role.nav_title %}{{role.nav_title}}{% else %}{{role.title}}{% endif %}</a></li>
           {% endunless %}
         {% endfor %}
+        <li><a href="{{ '/resources/' | relative_url }}">Everyone (All WAI Resources)</a></li>
         <li><a href="{{ '/translations/' | relative_url }}">Other Languages</a></li>
       </ul>
     </section>
@@ -91,7 +95,7 @@ inline_css: |
             <span class="title">Digital Accessibility Foundations</span>
           </h2>
         </header>
-        <img src="{{ "/content-images/wai-news/2019-12-03-w3cx-accessibility-intro.jpg" | relative_url }}" alt="">
+        <img src="{{ "/content-images/news/2019-12-03-w3cx-accessibility-intro.jpg" | relative_url }}" alt="">
         <p>The free "Introduction to Web Accessibility" online course provides the foundation you need to make your digital technology accessible. It's designed for:</p>
         <ul>
           <li>technical and non-technical learners</li>
@@ -132,7 +136,7 @@ inline_css: |
             <span class="title">Making Audio and Video Media Accessible</span>
           </h2>
         </header>
-        <img src="{{ "/content-images/wai-news/2019-09-10-making-audio-and-video-media-accessible.png" | relative_url }}" alt="">
+        <img src="{{ "/content-images/news/2019-09-10-making-audio-and-video-media-accessible.png" | relative_url }}" alt="">
         <p>This media resource helps you understand and create captions/subtitles, audio description of visual information, descriptive transcripts, and sign language for media. It introduces user experiences and benefits to organizations.</p>
         <div>
           <span class="button">Making Audio and Video Media Accessible</span>
@@ -168,12 +172,11 @@ inline_css: |
     <ul>
       <li><span><a href="https://www.hp.com">HP</a></span></li>
       <li><span><a href="http://www.ibm.com/able">IBM Corporation</a></span></li>
-      <li><span>European Commission (<abbr>EC</abbr>) <a href="https://ec.europa.eu/programmes/horizon2020/">Horizon 2020</a> (780057) (<a href="https://www.w3.org/WAI/about/projects/wai-tools/">WAI-Tools Project</a>)</span></li>
-      <li><span>European Commission (<abbr>EC</abbr>) <a href="https://ec.europa.eu/programmes/horizon2020/">Horizon 2020</a> (822245) (<a href="https://www.w3.org/WAI/about/projects/wai-guide/">WAI-Guide Project</a>)</span></li>
-      <li><span><a href="https://www.fordfoundation.org/">Ford Foundation</a>, <a href="https://www.fordfoundation.org/work/challenging-inequality/technology-and-society/">Technology and Society Program</a> (<a href="https://www.w3.org/WAI/expand-access/">WAI Expanding Access Project</a>)</span></li>
-      <li><span>US Department of Health and Human Services, <a href="https://www.acl.gov/about-acl/about-national-institute-disability-independent-living-and-rehabilitation-research">National Institute for Disability, Independent Living and Rehabilitation Research</a>, contract HHSP23301500054 (<a href="https://www.w3.org/WAI/Core2015/">WAI-Core 2015 Project</a>)</span></li>
+      <li><span>European Commission (<abbr>EC</abbr>) <a href="https://ec.europa.eu/programmes/horizon2020/">Horizon 2020</a> &mdash; 822245 (<a href="https://www.w3.org/WAI/about/projects/wai-guide/">WAI-Guide Project</a>), 101004794 (<a href="https://www.w3.org/WAI/about/projects/wai-coop/">WAI-CooP Project</a>)</span></li>
+      <li><span><a href="https://www.fordfoundation.org/">Ford Foundation</a>, <a href="https://www.fordfoundation.org/work/challenging-inequality/technology-and-society/">Technology and Society Program</a> (<a href="https://www.w3.org/WAI/about/projects/wai-core-ford/">WAI-Core Ford Project</a>)</span></li>
+      <li><span>US Department of Health and Human Services, <a href="https://www.acl.gov/about-acl/about-national-institute-disability-independent-living-and-rehabilitation-research">National Institute for Disability, Independent Living and Rehabilitation Research</a>, contract HHSP23301500054 (<a href="https://www.w3.org/WAI/Core2015/">WAI-Core 2015, 2022 Project</a>)</span></li>
     </ul>
     <p>WAI welcomes <a href="{{ '/about/sponsoring/' | relative_url }}">additional sponsors</a>.</p>
-    <br><p id="netlify" style="font-size: small">Previews of this site are powered by <a href="https://www.netlify.com/" style="color:black">Netlify</a>.</p>
+    <br><p id="netlify" style="font-size: small">Previews of this site are powered by <a href="https://www.netlify.com/" style="color:black">Netlify</a>. <!-- <a rel="me" href="https://w3c.social/@wai">Mastodon</a> --></p>
   </div>
 </div>

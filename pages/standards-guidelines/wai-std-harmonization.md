@@ -1,1 +1,0 @@
-../../_external/resources/wai-std-harmonization/index.md

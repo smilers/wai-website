@@ -11,10 +11,10 @@ author: "W3C Web Accessibility Initiative (WAI)"
 claim: "Strategies, standards, and resources to make<br>the web accessible to people with disabilities."
 warning_icon: false
 warning_message: >
-  This is <strong>beta redesign</strong> of the W3C WAI website. (<a href="https://github.com/w3c/wai-website/wiki/W3C-WAI-Website-Redesign-Information">Beta Info and Comments</a>) The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
+  This is a local preview of the W3C WAI website. The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  The Website of the World Wide Web Consortium’s Web Accessibility Initiative.
+  Accessibility resources free online from the international standards organization: W3C Web Accessibility Initiative (WAI).
 baseurl: "/wai-website" # the subpath of your site, e.g. /blog
 url: "https://w3c.github.io" # the base hostname & protocol for your site
 twitter:
@@ -31,14 +31,15 @@ exclude:
   - "vendor"
 # Build settings
 markdown: kramdown
-kramwdown:
+kramdown:
   toc_levels: 2..3
   input: GFM
   syntax_highlighter: rouge
 highlighter: rouge
 repository: w3c/wai-website
+branch: master
 
-ytkey: AIzaSyCiZ9uToWu9jb7BTx47NtzCvmGGXKXp8nI
+ytkey: AIzaSyBzq155tA3E3gaYlRdx2S9U9FM78U1-568
 
 # remote_themes are an extension for Jekyll running in GitHub pages and are a GitHub repo 
 remote_theme: w3c/wai-website-theme
@@ -52,37 +53,13 @@ collections:
     area: "Accessibility Fundamentals"
     name: "Web Accessibility Perspective Videos"
     shortname: "Perspective Videos"
-    repository: w3c/wai-perspective-videos
     output: true
     acknowledgements: true
     permalink: /:collection/:path/
-  people-use-web:
-    area: "Accessibility Fundamentals"
-    name: "How People with Disabilities Use the Web"
-    repository: w3c/wai-people-use-web
-    output: true
-    acknowledgements: false
-    permalink: /:collection/:path/
-  planning-and-managing:
-    area: "Plan and Manage"
-    name: "Planning and Managing"
-    repository: w3c/wai-dynamic-planning
-    output: true
-    acknowledgements: false
-    permalink: /:collection/:path/
-  accessibility-training:
-    area: "Teach & Advocate"
-    name: "Accessibility Training"
-    shortname: Trainings
-    repository: w3c/wai-develop-training
-    output: true
-    acknowledgements: false
-    permalink: /teach-advocate/:collection/:path/
   tips:
     area: "All Areas"
     name: "Tips for Getting Started"
     shortname: Getting Started Tips
-    repository: w3c/wai-quick-start
     output: true
     acknowledgements: false
     permalink: /:collection/:path/
@@ -91,45 +68,24 @@ collections:
     name: "Web Accessibility Laws & Policies"
     shortname: "Laws & Policies"
     parent: "/planning/"
-    repository: w3c/wai-policies-prototype
     output: true
     acknowledgements: false
     permalink: /:collection/:path/
     footer: |
-      <p><strong>Date:</strong> Updated 21 March 2018.</p>
-      <p><strong>Editors and Developers:</strong> Mary Jo Mueller, Robert Jolly, <a href="https://www.w3.org/People/yatil/">Eric Eggert</a>. Contributors: <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a> and <a href="https://www.w3.org/WAI/EO/EOWG-members">EOWG Participants</a>. Previous editors: <a href="https://www.w3.org/People/Brewer/">Judy Brewer</a> and <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a>; previous contributor: Jennifer Sutton.</p>
-      <p>Developed by the Education and Outreach Working Group (<a href="https://www.w3.org/WAI/EO/">EOWG</a>).</p>
-  older-users:
-    area: "Plan & Manage"
-    name: "Older Users"
-    shortname: "Older Users"
-    repository: w3c/wai-older-users
-    output: true
-    acknowledgements: false
-    permalink: /:collection/:path/
-    prevnext: false
+      <p><strong>Date: 4 December 2023</strong>. Listings are updated regularly. Near the top of each country listing is a 'last updated' date. This user interface was updated 21 March 2018.</p>
+      <p><strong>Editors:</strong> <a href="https://www.w3.org/People/kevin/">Kevin White</a>, Britt Classen, Michel Hansma, Vera Lange, Eric Velleman. <strong>Previous Editors:</strong> Mary Jo Mueller, Robert Jolly, Eric Eggert, Judy Brewer, <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a>. Previous contributors: Jennifer Sutton and <a href="https://www.w3.org/groups/wg/eowg/participants">EOWG Participants</a>.</p>
+      <p>Developed by the Accessibility Education and Outreach Working Group (<a href="https://www.w3.org/groups/wg/eowg">EOWG</a>). Updated as part of the <a href="https://www.w3.org/WAI/about/projects/wai-coop/">WAI-CooP project</a>, co-funded by the European Commission.</p>
   audiences:
-    # area: "Plan & Manage"
     name: "Roles"
     shortname: "Roles"
-    repository: w3c/wai-audiences
     output: true
-    acknowledgements: false
     permalink: /roles/:path/
-    prevnext: false
     parent: "/"
-  about:
-    name: "About"
-    repository: w3c/wai-about-wai
-    output: true
-    acknowledgements: false
-    permalink: /:collection/:path/
     prevnext: false
   posts:
     output: true
     permalink: /news/:year-:month-:day/:title/
     parent: "/news/"
-    repository: "w3c/wai-news"
   patterns:
     title: Patterns
     permalink: WCAG2/supplemental/:collection/:name/
@@ -144,6 +100,10 @@ collections:
     title: Glossary
     permalink: /:collection/:name/
     output: true
+  translations-sitemaps:
+    permalink: /about/translating/sitemaps/:name
+    output: true
+    sort_by: title
 
 defaults:
   - scope:
@@ -154,18 +114,8 @@ defaults:
       path: "_perspective-videos"
     values:
       layout: "default"
-  - scope:
-      path: "_people-use-web"
-    values:
-      layout: "default"
-  - scope:
-      path: "_planning-and-managing"
-    values:
-      layout: "default"
-  - scope:
-      path: "_accessibility-training"
-    values:
-      layout: "default"
+      github:
+        repository: w3c/wai-perspective-videos
   - scope:
       path: "_tips"
     values:
@@ -174,18 +124,14 @@ defaults:
       path: "_policies"
     values:
       layout: "policy"
-  - scope:
-      path: "_older-users"
-    values:
-      layout: "default"
-  - scope:
-      path: "_about"
-    values:
-      layout: "default"
+      github:
+        repository: w3c/wai-policies-prototype
   - scope:
       path: "_posts"
     values:
       layout: "default"
+      github:
+        label: wai-news
   - scope:
       path: "_audiences"
     values:
@@ -197,18 +143,19 @@ defaults:
     values:
       class: tight-page
       layout: "pattern"
+      type_of_guidance_in_content: true
       type_of_guidance: Cognitive Accessibility Design Pattern
       feedbackmail: public-cognitive-a11y-tf@w3.org # delete this line if it’s an EOWG resource (the default is wai-eo-editors@w3.org)
       standalone_resource_header:
         title: Supplemental Guidance to WCAG 2
         subtitle: Additional ways to improve accessibility, not required to meet WCAG)
         link:
-          ref: /WCAG2/supplemental/about
+          ref: /WCAG2/supplemental/about/
           title: About Supplemental Guidance and WCAG
       standalone_resource_pager:
-        icon: /WAI/content-images/wai-wcag-supplemental/brain.svg
+        icon: /content-images/wai-wcag-supplemental/brain.svg
         name: All Cognitive
-        ref: /WAI/WCAG2/supplemental/#cognitiveaccessibilityguidance
+        ref: /WCAG2/supplemental/#cognitiveaccessibilityguidance
         include: dg-pager.liquid
       footer:
         > # Translate words below, including "Date:" and "Editor:" Translate the Working Group name. Leave the Working Group acronym in English. Do *not* change the dates in the footer below.
@@ -228,18 +175,19 @@ defaults:
     values:
       class: tight-page
       layout: "objective"
+      type_of_guidance_in_content: true
       type_of_guidance: Cognitive Accessibility Objective
       feedbackmail: public-cognitive-a11y-tf@w3.org # delete this line if it’s an EOWG resource (the default is wai-eo-editors@w3.org)
       standalone_resource_header:
         title: Supplemental Guidance to WCAG 2
-        subtitle: Additional ways to improve accessibility (not required to meet WCAG)
+        subtitle: Additional ways to improve accessibility, not required to meet WCAG
         link:
-          ref: /WCAG2/supplemental/about
+          ref: /WCAG2/supplemental/about/
           title: About Supplemental Guidance and WCAG
       standalone_resource_pager:
-        icon: /WAI/content-images/wai-wcag-supplemental/brain.svg
+        icon: content-images/wai-wcag-supplemental/brain.svg
         name: All Cognitive
-        ref: /WAI/WCAG2/supplemental/#cognitiveaccessibilityguidance
+        ref: WCAG2/supplemental/#cognitiveaccessibilityguidance
         include: dg-pager.liquid
       footer:
         > # Translate words below, including "Date:" and "Editor:" Translate the Working Group name. Leave the Working Group acronym in English. Do *not* change the dates in the footer below.
@@ -261,14 +209,14 @@ defaults:
       feedbackmail: wai@w3.org
       standalone_resource_header:
         title: Supplemental Guidance to WCAG 2
-        subtitle: Additional ways to improve accessibility (not required to meet WCAG)
+        subtitle: Additional ways to improve accessibility, not required to meet WCAG
         link:
-          ref: /WCAG2/supplemental/about
+          ref: /WCAG2/supplemental/about/
           title: About Supplemental Guidance and WCAG
       standalone_resource_pager:
-        icon: /WAI/content-images/wai-wcag-supplemental/brain.svg
+        icon: /content-images/wai-wcag-supplemental/brain.svg
         name: All Cognitive
-        ref: /WAI/WCAG2/supplemental/#cognitiveaccessibilityguidance
+        ref: /WCAG2/supplemental/#cognitiveaccessibilityguidance
         include: dg-pager.liquid
   - scope:
       path: "pages/wcag-act-rules"
@@ -282,19 +230,71 @@ defaults:
         <p><strong>Date:</strong> Updated @@ Month 2021. First published Month 20@@.</p>
         <p><strong>Editors:</strong> @@name, @@name. <strong>Contributors:</strong> @@name, @@name, and <a href="https://www.w3.org/groups/wg/@@wg/participants">participants of the @@WG</a>. ACKNOWLEDGEMENTS lists contributors and credits.</p>
         <p>Developed by the @@ Working Group (<a href="http://www.w3.org/WAI/@@/">@@WG</a>). Developed as part of the <a href="https://www.w3.org/WAI/@@/">WAI-@@ project</a>, @@co-funded by the European Commission.</p>
-      type_of_guidance: "Test Rule"
+      type_of_guidance: "ACT Rule"
       rule_meta:
-        rule_type: "atomic rule"
+        rule_type: "Atomic rule"
       sidebar: true
       standalone_resource_header:
-        title: WCAG 2 Test Rules
-        subtitle: For developers of evaluation tools and test methodologies
-        link:
-          title: About WCAG 2 Test Rules
+        title: ACT Rules
+        title-ref: /standards-guidelines/act/rules/
+        subtitle: Rules for accessibility conformance testing (ACT)
+      standalone_resource_nav_links:
+        - name: All Rules
+          ref: /standards-guidelines/act/rules/
+        - name: About
           ref: /standards-guidelines/act/rules/about/
-      standalone_resource_pager:
-        name: All Test Rules
-        ref: /WAI/standards-guidelines/act/rules/
+        - name: Implementations
+          ref: /standards-guidelines/act/implementations/
+  - scope:
+      path: "pages/wai-aria-practices"
+    values:
+      layout: "standalone_resource"
+      standalone_resource_header:
+        title: "ARIA Authoring Practices Guide (APG)"
+        title-ref: /ARIA/apg/
+        subtitle: "How to build accessibility semantics into web patterns and widgets"
+      standalone_resource_nav_links:
+        - name: APG Home
+          ref: /ARIA/apg/
+        - name: Patterns
+          ref: /ARIA/apg/patterns/
+        - name: Practices
+          ref: /ARIA/apg/practices/
+        - name: Index
+          ref: /ARIA/apg/example-index/
+        - name: About
+          ref: /ARIA/apg/about/
+  -
+    scope:
+      path: "pages/wai-course-list"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "pages/wai-authoring-tools-list"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "pages/wai-evaluation-tools-list"
+    values:
+      layout: "default"
+
+  -
+    scope:
+      path: "_translations-sitemaps"
+    values:
+      lang: en
+      layout: translation-sitemap
+      description: Help make the Web accessible to people with disabilities around the world. We appreciate your contributions to translating W3C WAI accessibility resources.
+      image: /content-images/wai-about-wai/social-translations.png
+      feedbackmail: group-wai-translations@w3.org
+      footer: |
+        <p>Developed as part of the <a href="https://www.w3.org/WAI/about/projects/wai-coop/">WAI-CooP project</a>, co-funded by the European Commission.</p>
+      inline_css: |
+        .translations-table p{
+          margin: 0.2rem 0 0.4rem;
+        }
 
 # include all collections here so they are searchable
 tipue_search:
@@ -304,16 +304,28 @@ tipue_search:
       [
         "wai-wcag-act-rules-patterns",
         "perspective-videos",
-        "people-use-web",
-        "planning-and-managing",
-        "accessibility-training",
         "tips",
         "policies",
-        "older-users",
         "audiences",
-        "about",
-        "objectives", 
-        "patterns"
+        "objectives",
+        "patterns",
+        "translations-sitemaps"
+      ]
+  exclude:
+    files:
+      [
+        "pages/wai-aria-practices/patterns/landmarks/examples/HTML5.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/at.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/banner.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/complementary.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/contentinfo.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/form.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/general-principles.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/main.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/navigation.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/region.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/resources.html",
+        "pages/wai-aria-practices/patterns/landmarks/examples/search.html",
       ]
 
 # TODO docs say don't need to declare any used in the Theme
